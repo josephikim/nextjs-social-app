@@ -1,18 +1,19 @@
 import * as React from "react";
-import { IPost } from "../types";
+import { Post } from "@prisma/client";
 
 type AddPostProps = {
-  savePost: (e: React.FormEvent, formData: IPost) => void;
+  savePost: (e: React.FormEvent, formData: Post) => void;
 };
 
 const initialState = {
   id: -1,
   title: "",
+  image: "",
   body: "",
 };
 
 const AddPost: React.FC<AddPostProps> = ({ savePost }) => {
-  const [formData, setFormData] = React.useState<IPost>(initialState);
+  const [formData, setFormData] = React.useState<Post>(initialState);
 
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
