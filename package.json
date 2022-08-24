@@ -8,7 +8,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "prepare-lint-staged": "husky install",
+    "precommit": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +27,20 @@
     "@types/node": "^18.7.9",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "prisma": "^4.2.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{html,js,ts,jsx,tsx}": [
+      "prettier --write"
+    ]
   }
 }
