@@ -7,13 +7,14 @@
 /coverage
 
 # next.js
-/.next/
+/.next
 /out/
 
 # production
 /build
 
 # misc
+/.husky
 /notes
 .DS_Store
 *.pem
